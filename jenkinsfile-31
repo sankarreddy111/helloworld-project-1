@@ -1,6 +1,12 @@
 pipeline {
 agent {label 'master'}
 
+ environment {
+      sonar_url = 'http://172.31.37.253:9000'
+      sonar_username = 'admin'
+      sonar_password = 'admin'
+ } 
+
 tools {
 jdk 'Java'
 maven 'Maven'
@@ -18,5 +24,14 @@ stages{
         sh 'mvn clean package'
       }
     }
- }
+    stage ('Sonarqube Analysis'){
+           steps {
+           withSonarQubeEnv('Sonarqube') {
+           sh '''
+           mvn -e -B sonar:sonar -Dsonar.java.source=1.8 -Dsonar.host.url="${sonar_url}" -Dsonar.login="${sonar_username}" -Dsonar.password="${sonar_password}" -Dsonar.sourceEncoding=UTF-8
+           '''
+           }
+         }
+      } 
+   }
 }
