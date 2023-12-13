@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: gcr.io/wired-tea-401110/helloworld:latest
+        image: gcr.io/curious-arch-407014/helloworld:latest
         ports:
         - containerPort: 80
         - containerPort: 443
