@@ -4,7 +4,7 @@ Hello world!!!(WAR-style)
 This is the simplest possible Java webapp for testing servlet container deployments.  It should work on any container and requires no other dependencies or configuration.
 
 docker-tomcat-satylearning
-A basic tutorial on running a web app on Tomcat using Docker - SATYLearning - Subscribe my youtube channel
+-----A basic tutorial on running a web app on Tomcat using Docker - SATYLearning - Subscribe my youtube channel
 
 Ref: https://github.com/arun-gupta/docker-kubernetes-hello-world
      https://github.com/efsavage/hello-world-war
