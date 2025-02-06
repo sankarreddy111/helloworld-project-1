@@ -1,0 +1,24 @@
+pipeline{
+
+  agent{label 'master'}
+
+   tools{
+     jdk 'Java'
+     maven 'Maven'
+
+    }
+
+ stages{
+      stage ('clone') {
+           steps{
+               git branch: 'main',
+              url:'https://github.com/sankarreddy111/helloworld-project-1.git'
+            }
+        }
+
+    }
+    
+}
+
+
+
